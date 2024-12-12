@@ -6,17 +6,17 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class ValidationStep extends ValidationPage {
 
-    @Step("Validar que se muestre el modulo productos")
+    @Step("Validate that the product module is displayed")
     public Boolean titleIsDisplayed(){
         return label_product.isDisplayed();
     }
 
-    @Step("Validar que se muestre el mensaje de error")
+    @Step("Validate that the error message is displayed")
     public Boolean errorMessageIsDisplayed(){
         return error_message.isDisplayed();
     }
 
-    @Step("Validar los productos listados en el carrito")
+    @Step("Validate the products listed in the shopping cart")
     public  Boolean productListIsDisplayed(){
         for (WebElementFacade product : products_list){
             if (product.isDisplayed()){
@@ -26,7 +26,7 @@ public class ValidationStep extends ValidationPage {
         return false;
     }
 
-    @Step("Validar que el carrito este vacio")
+    @Step("Validate that the cart is empty")
     public Boolean shoppingCartIsEmpty(){
         for (WebElementFacade product:products_list){
             if (!product.isDisplayed()){
@@ -36,7 +36,7 @@ public class ValidationStep extends ValidationPage {
         return true;
     }
 
-    @Step("Validar finalización de la orden")
+    @Step("Validate the order completion")
     public Boolean thankYouMessageIsDisplayed(){
         return thankYouMessage.isDisplayed();
     }

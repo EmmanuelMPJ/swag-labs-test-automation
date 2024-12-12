@@ -21,27 +21,27 @@ public class shoppingDef {
     @Steps(shared = true)
     ShoppingCartStep shoppingCart;
 
-    @And("agrega productos al carrito")
+    @And("add products to the shopping cart")
     public void userAddProducts(){
         selectProduct.addProducts(3);
     }
 
-    @And("da click en el icono del carrito")
+    @And("click on the cart icon")
     public void userClickShoppingCartIcon(){
         selectProduct.clickCartIcon();
     }
 
-    @Then("la aplicacion debería listar los productos seleccionados en el carrito de compras")
+    @Then("the application should list the selected products in the shopping cart")
     public void systemListProducts(){
         Assert.assertTrue(validate.productListIsDisplayed());
     }
 
-    @Then("la aplicacion deberia mostrar el carrito sin productos")
+    @Then("the application should display the cart without products")
     public void systemShowEmptyShoppingCart(){
         Assert.assertTrue(validate.shoppingCartIsEmpty());
     }
 
-    @When("completa el registro de la orden")
+    @When("complete the order registration")
     public void userCompleteOrder(){
         shoppingCart.clickCheckoutButton();
         shoppingCart.typeFirstName("Jhon");
@@ -51,7 +51,7 @@ public class shoppingDef {
         shoppingCart.clicKFinishButton();
     }
 
-    @Then("la aplicacion deberia procesar la compra")
+    @Then("the application should process the purchase")
     public void systemProcessShoppingCart(){
         Assert.assertTrue(validate.thankYouMessageIsDisplayed());
     }

@@ -1,16 +1,16 @@
 @Suite @Login
-Feature: CP01 - validar inicio de sesion
+Feature: CP01 - Validate login
 
-  Background: Validar el inicio de sesion con credenciales validas e invalidas
+  Background: Validate login with valid and invalid credentials
 
-    Given el usuario navega al sitio web
+    Given the user navigates to the website
 
     @ValidCredentials
-    Scenario: 1 - validar con credenciales correctas
-      When ingresa credenciales validas
-      Then la aplicación debería mostrar el modulo principal de productos
+    Scenario: 1 - Validate with correct credentials
+      When enter valid credentials
+      Then the application should display the main product module
 
     @InvalidCredentials
-    Scenario: 2 - validar con credenciales incorrectas
-      When ingresa credenciales invalidas
-      Then la aplicacion deberia mostrar un mensaje de error
+    Scenario: 2 - Validate with incorrect credentials
+      When enter invalid credentials
+      Then the application should display an error message

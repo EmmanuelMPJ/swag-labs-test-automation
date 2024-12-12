@@ -20,31 +20,31 @@ public class LoginDef {
     @Steps(shared = true)
     ValidationStep validate;
 
-    @Given("el usuario navega al sitio web")
+    @Given("the user navigates to the website")
     public void userNavigateTo(){
         url.navigateTo("https://www.saucedemo.com/v1/index.html");
     }
 
-    @When("ingresa credenciales validas")
+    @When("enter valid credentials")
     public void userLoginWithValidCredentials(){
         login.typeUsername("standard_user");
         login.typePassword("secret_sauce");
         login.clickLogin();
     }
 
-    @Then("la aplicación debería mostrar el modulo principal de productos")
+    @Then("the application should display the main product module")
     public void webSiteShowsProductModulo(){
         Assert.assertTrue(validate.titleIsDisplayed());
     }
 
-    @When("ingresa credenciales invalidas")
+    @When("enter invalid credentials")
     public void userLoginWithInvalidCredentials(){
         login.typeUsername("standard_user");
         login.typePassword("1234");
         login.clickLogin();
     }
 
-    @Then("la aplicacion deberia mostrar un mensaje de error")
+    @Then("the application should display an error message")
     public void webSiteShowsErrorMessage(){
         Assert.assertTrue(validate.errorMessageIsDisplayed());
     }

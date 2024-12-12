@@ -13,7 +13,7 @@ import java.util.List;
 public class ProductStep extends ProductPage {
     protected List<WebElementFacade> random_products;
 
-    @Step("Agregar productos aleatorios al carrito de compras")
+    @Step("Add random products to the shopping cart")
     public void addProducts(int amount){
         List<WebElementFacade> copyProducts = new ArrayList<>(add_product_buttons);
         Collections.shuffle(copyProducts);
@@ -24,7 +24,7 @@ public class ProductStep extends ProductPage {
         }
     }
 
-    @Step("Click en el icono del carrito de compras")
+    @Step("Click on the shopping cart icon")
     public void clickCartIcon(){
         cartIcon.click();
     }

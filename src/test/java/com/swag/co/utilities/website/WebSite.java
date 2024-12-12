@@ -8,7 +8,7 @@ public class WebSite {
     @Steps(shared = true)
     PageObject swag;
 
-    @Step("Navegar al sitio web")
+    @Step("Navigate to the website")
     public void navigateTo(String url){
         swag.setDefaultBaseUrl(url);
         swag.open();

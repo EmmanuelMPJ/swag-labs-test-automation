@@ -1,24 +1,24 @@
 @Suite @ShoppingCart
-Feature: CP02 - validar carrito de compras
+Feature: CP02 - Validate shopping cart
 
-  Background: Realizar 3 validaciones en el carrito de compras
-    Given el usuario navega al sitio web
-    When ingresa credenciales validas
+  Background: Perform 3 validations on the shopping cart
+    Given the user navigates to the website
+    When enter valid credentials
 
     @ShoppingCartList
-    Scenario: 1 - comprobar carrito de compras al seleccionar productos
-      And agrega productos al carrito
-      And da click en el icono del carrito
-      Then la aplicacion debería listar los productos seleccionados en el carrito de compras
+    Scenario: 1 - Check shopping cart when selecting products
+      And add products to the shopping cart
+      And click on the cart icon
+      Then the application should list the selected products in the shopping cart
 
     @ShoppingCartEmpty
-    Scenario: 2 - comprobar que al no seleccionar nada el carrito de compras esté vacio
-      And da click en el icono del carrito
-      Then la aplicacion deberia mostrar el carrito sin productos
+    Scenario: 2 - Verify that the shopping cart is empty when no items are selected
+      And click on the cart icon
+      Then the application should display the cart without products
 
     @ShoppingCartProcess
-    Scenario: 3 - comprobar que al agregar productos al carrito se pueda realizar la compra exitosamente
-      And agrega productos al carrito
-      And da click en el icono del carrito
-      When completa el registro de la orden
-      Then la aplicacion deberia procesar la compra
+    Scenario: 3 - Verify that after adding products to the cart, the purchase can be completed successfully
+      And add products to the shopping cart
+      And click on the cart icon
+      When complete the order registration
+      Then the application should process the purchase

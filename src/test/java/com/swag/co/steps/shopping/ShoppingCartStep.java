@@ -5,32 +5,32 @@ import net.serenitybdd.annotations.Step;
 
 public class ShoppingCartStep extends ShoppingCartPage {
 
-    @Step("Dar click en checkout")
+    @Step("Click on checkout")
     public void clickCheckoutButton(){
         checkoutButton.click();
     }
 
-    @Step("Ingresar nombre")
+    @Step("Enter name")
     public void typeFirstName(String firstname){
         txt_firstname.sendKeys(firstname);
     }
 
-    @Step("Ingresar Apellido")
+    @Step("Enter lastname")
     public void typeLastName(String lastname){
         txt_lastname.sendKeys(lastname);
     }
 
-    @Step("Ingresar codigo postal")
+    @Step("Enter postal code")
     public void typePostal(String postal){
         txt_postal.sendKeys(postal);
     }
 
-    @Step("Dar click en continuar")
+    @Step("Click on continue")
     public void clickContinueButton(){
         continueButton.click();
     }
 
-    @Step("Dar click en finalizar")
+    @Step("Click on finish")
     public void clicKFinishButton(){
         finishButton.click();
     }

@@ -5,20 +5,17 @@ import net.serenitybdd.annotations.Step;
 
 public class LoginStep extends LoginPage {
 
-    @Step("Ingresar nombre de usuario")
+    @Step("Enter username")
     public void typeUsername(String username){
-        if (txt_username == null) {
-            System.out.println("El elemento txt_username es null. Verifica el mapeo o inicialización.");
-        }
         txt_username.waitUntilVisible().sendKeys(username);
     }
 
-    @Step("Ingresar contraseña")
+    @Step("Enter password")
     public void typePassword(String password){
         txt_password.waitUntilVisible().sendKeys(password);
     }
 
-    @Step("Hacer click en el boton de login")
+    @Step("Click on the login button")
     public void clickLogin(){
         login_button.waitUntilVisible().click();
     }
